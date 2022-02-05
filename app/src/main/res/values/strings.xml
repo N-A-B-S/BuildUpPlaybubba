@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">BuildUpPlaybubba</string>
+    <string name="steps">Steps</string>
+    <string name="stepCount">0</string>
+
+    <string-array name="activities_array">
+        <item>Walking</item>
+        <item>Jogging</item>
+        <item>Running</item>
+        <item>Cycling</item>
+        <item>Swimming</item>
+        <item>Weightlifting</item>
+    </string-array>
+</resources>
