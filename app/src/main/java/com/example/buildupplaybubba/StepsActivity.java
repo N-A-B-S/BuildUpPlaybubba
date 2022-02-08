@@ -77,7 +77,7 @@ public class StepsActivity extends AppCompatActivity{
 
         SharedPreferences sharedPreferences = getSharedPreferences("stepPreferences", Context.MODE_PRIVATE);
         for (int i = 0; i < previousDates.size(); i++) {
-            int previousStepCount = sharedPreferences.getInt(previousDates.get(0), 0);
+            int previousStepCount = sharedPreferences.getInt(previousDates.get(i)+"0", 0);
             previousSteps.add(previousStepCount);
         }
     }
