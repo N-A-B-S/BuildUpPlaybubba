@@ -155,8 +155,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         mealsFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Add meal functionality here", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(MainActivity.this, "Add meal functionality here", Toast.LENGTH_SHORT).show();
+                goToMealActivity();
             }
+
         });
     }
 
@@ -166,7 +168,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     }
 
     public void goToMealActivity(){
-
+        Intent intent = new Intent(this, AddMealActivity.class);
+        startActivity(intent);
     }
 
     public void goToSleepActivity(){

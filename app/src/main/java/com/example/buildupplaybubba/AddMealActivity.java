@@ -32,7 +32,7 @@ public class AddMealActivity extends AppCompatActivity {
 
        saveMeal = (Button) findViewById(R.id.saveMeal);
        saveMeal.setOnClickListener(v -> {
-           //Activities
+           //Stuff here
        });
 
 
