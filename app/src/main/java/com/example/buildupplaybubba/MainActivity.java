@@ -168,8 +168,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     }
 
     public void goToMealActivity(){
-//        Intent intent = new Intent(this, AddMealActivity.class);
-//        startActivity(intent);
+        Intent intent = new Intent(this, AddMealActivity.class);
+        startActivity(intent);
     }
 
     public void goToSleepActivity(){

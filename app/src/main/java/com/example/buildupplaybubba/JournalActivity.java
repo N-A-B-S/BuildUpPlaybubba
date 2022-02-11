@@ -82,7 +82,7 @@ public class JournalActivity extends AppCompatActivity implements RecyclerViewIn
                 String key = mapEntries.getKey();
                 String value = mapEntries.getValue();
                 valuesFromDB.add(value);
-                Log.d("values", value);
+                Log.d(key, value);
             }
             activityList.add(new ActivityDataModel(valuesFromDB.get(0), valuesFromDB.get(4), valuesFromDB.get(3), valuesFromDB.get(2), valuesFromDB.get(1)));
         }

@@ -57,11 +57,11 @@ public class AddWorkoutActivity extends AppCompatActivity implements AdapterView
     }
 
     public void saveActivity(View view) {
-        ActivityDatabaseHelper activityDatabaseHelper = new ActivityDatabaseHelper(getApplicationContext());
+        ActivityDatabaseHelper adh = new ActivityDatabaseHelper(getApplicationContext());
         if (activityTitle.getText().toString().isEmpty() || spinner.getSelectedItem().toString().isEmpty() || caloriesBurnt.getText().toString().isEmpty()) {
             Toast.makeText(this, "Please fill out all fields", Toast.LENGTH_SHORT).show();
         } else {
-            boolean result = activityDatabaseHelper.addActivity(activityTitle.getText().toString(), spinner.getSelectedItem().toString(), caloriesBurnt.getText().toString());
+            boolean result = adh.addActivity(activityTitle.getText().toString(), spinner.getSelectedItem().toString(), caloriesBurnt.getText().toString());
             if (result){
                 Toast.makeText(this, "Activity saved", Toast.LENGTH_SHORT).show();
                 finish();

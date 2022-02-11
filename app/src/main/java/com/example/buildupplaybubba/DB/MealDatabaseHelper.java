@@ -15,7 +15,7 @@ import java.util.HashMap;
 
 public class MealDatabaseHelper extends android.database.sqlite.SQLiteOpenHelper {
     public static final String DB_NAME = "FitnessApp";
-    public static final int DB_VERSION = 1;
+    public static final int DB_VERSION = 2;
     public static final String TABLE_NAME = "UserMeals";
 
     public static final String ID = "id";

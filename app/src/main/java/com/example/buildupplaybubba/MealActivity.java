@@ -44,37 +44,24 @@ public class MealActivity extends AppCompatActivity implements RecyclerViewInter
     }
 
     private void setMealModel(){
-//        Log.d("setMealModel", "accessing method");
-//        MealDatabaseHelper mdh = new MealDatabaseHelper(getApplicationContext());
-//        ArrayList<String> valuesFromDB = new ArrayList<>();
-//        ArrayList<HashMap<String, String>> databaseData = new ArrayList<>();
-//        databaseData = mdh.getMealData();
-//        for (HashMap<String, String> map : databaseData){
-//            valuesFromDB.clear();
-//            for (Map.Entry<String, String> mapEntries : map.entrySet()){
-//                String key = mapEntries.getKey();
-//                String value = mapEntries.getValue();
-//                valuesFromDB.add(value);
-//                Log.d("values", value);
-//            }
-//            Log.d("MealValues", valuesFromDB.get(0));
-//            Log.d("MealValues", valuesFromDB.get(1));
-//            Log.d("MealValues", valuesFromDB.get(2));
-//            Log.d("MealValues", valuesFromDB.get(3));
-//            Log.d("MealValues", valuesFromDB.get(4));
-//            Log.d("MealValues", valuesFromDB.get(5));
-//            Log.d("MealValues", valuesFromDB.get(6));
-//            Log.d("MealValues", valuesFromDB.get(7));
-//            Log.d("MealValues", valuesFromDB.get(8));
-//            Log.d("MealValues", valuesFromDB.get(9));
-//            Log.d("MealValues", valuesFromDB.get(10));
-//            Log.d("MealValues", valuesFromDB.get(11));
-//            Log.d("MealValues", valuesFromDB.get(12));
-//            Log.d("MealValues", valuesFromDB.get(13));
-//
-//
-//            //mealList.add(new MealDataModel())
-//        }
+        Log.d("SetMealModel", "accessing method");
+        MealDatabaseHelper dbHelper = new MealDatabaseHelper(getApplicationContext());
+        ArrayList<String> valuesFromDB = new ArrayList<>();
+        ArrayList<HashMap<String, String>> databaseData = new ArrayList<>();
+        databaseData = dbHelper.getMealData();
+        for (HashMap<String, String> map : databaseData){
+            valuesFromDB.clear();
+            for (Map.Entry<String, String> mapEntries : map.entrySet()){
+                String key = mapEntries.getKey();
+                String value = mapEntries.getValue();
+                valuesFromDB.add(value);
+                Log.d(key, value);
+            }
+            mealList.add(new MealDataModel(valuesFromDB.get(12),valuesFromDB.get(0), valuesFromDB.get(5), valuesFromDB.get(4),
+                    valuesFromDB.get(3), valuesFromDB.get(8), valuesFromDB.get(10), valuesFromDB.get(13), valuesFromDB.get(14),
+                    valuesFromDB.get(6), valuesFromDB.get(1), valuesFromDB.get(9), valuesFromDB.get(7), valuesFromDB.get(2),
+                    valuesFromDB.get(11)));
+        }
 
     }
 
