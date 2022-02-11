@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.buildupplaybubba.DB.SQLiteOpenHelper;
+import com.example.buildupplaybubba.DB.ActivityDatabaseHelper;
 
 public class AddWorkoutActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
@@ -57,11 +57,11 @@ public class AddWorkoutActivity extends AppCompatActivity implements AdapterView
     }
 
     public void saveActivity(View view) {
-        SQLiteOpenHelper sqLiteOpenHelper = new SQLiteOpenHelper(getApplicationContext());
+        ActivityDatabaseHelper activityDatabaseHelper = new ActivityDatabaseHelper(getApplicationContext());
         if (activityTitle.getText().toString().isEmpty() || spinner.getSelectedItem().toString().isEmpty() || caloriesBurnt.getText().toString().isEmpty()) {
             Toast.makeText(this, "Please fill out all fields", Toast.LENGTH_SHORT).show();
         } else {
-            boolean result = sqLiteOpenHelper.addActivity(activityTitle.getText().toString(), spinner.getSelectedItem().toString(), caloriesBurnt.getText().toString());
+            boolean result = activityDatabaseHelper.addActivity(activityTitle.getText().toString(), spinner.getSelectedItem().toString(), caloriesBurnt.getText().toString());
             if (result){
                 Toast.makeText(this, "Activity saved", Toast.LENGTH_SHORT).show();
                 finish();

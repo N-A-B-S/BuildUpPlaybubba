@@ -13,7 +13,7 @@ import com.example.buildupplaybubba.DateHelper.DateHelper;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class SQLiteOpenHelper extends android.database.sqlite.SQLiteOpenHelper {
+public class ActivityDatabaseHelper extends android.database.sqlite.SQLiteOpenHelper {
         public static final String DB_NAME = "FitnessApp";
         public static final int DB_VERSION = 1;
         public static final String TABLE_NAME = "UserWorkouts";
@@ -26,7 +26,7 @@ public class SQLiteOpenHelper extends android.database.sqlite.SQLiteOpenHelper {
 
         DateHelper dateHelper;
 
-        public SQLiteOpenHelper(@Nullable Context context) {
+        public ActivityDatabaseHelper(@Nullable Context context) {
             super(context, DB_NAME, null, DB_VERSION);
         }
 

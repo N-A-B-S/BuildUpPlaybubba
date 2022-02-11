@@ -1,4 +1,4 @@
-package com.example.buildupplaybubba.RecyclerView;
+package com.example.buildupplaybubba.DataModels;
 
 public class ActivityDataModel {
     private String dbID;

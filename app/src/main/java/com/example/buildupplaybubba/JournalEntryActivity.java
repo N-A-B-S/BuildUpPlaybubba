@@ -3,26 +3,22 @@ package com.example.buildupplaybubba;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.buildupplaybubba.DB.SQLiteOpenHelper;
+import com.example.buildupplaybubba.DB.ActivityDatabaseHelper;
 
 public class JournalEntryActivity extends AppCompatActivity {
 
     private AlertDialog.Builder dialogBuilder;
     private AlertDialog dialog;
-    SQLiteOpenHelper dbHelper;
+    ActivityDatabaseHelper dbHelper;
 
     ImageButton editButton, deleteButton;
     TextView title, date, caloriesBurnt;
@@ -64,7 +60,7 @@ public class JournalEntryActivity extends AppCompatActivity {
         date.setText(activityDate);
         caloriesBurnt.setText(activityCalories + " cals");
 
-        dbHelper = new SQLiteOpenHelper(this);
+        dbHelper = new ActivityDatabaseHelper(this);
 
 
 

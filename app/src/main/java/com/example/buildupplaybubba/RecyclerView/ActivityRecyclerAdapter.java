@@ -8,27 +8,28 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.buildupplaybubba.DataModels.ActivityDataModel;
 import com.example.buildupplaybubba.R;
 import com.example.buildupplaybubba.RecyclerViewInterface;
 
 import java.util.ArrayList;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder> {
+public class ActivityRecyclerAdapter extends RecyclerView.Adapter<ActivityRecyclerAdapter.activityViewHolder> {
     private final RecyclerViewInterface recyclerViewInterface;
     private ArrayList<ActivityDataModel> modelList;
 
-    public RecyclerAdapter(ArrayList<ActivityDataModel> list, RecyclerViewInterface recyclerViewInterface){
+    public ActivityRecyclerAdapter(ArrayList<ActivityDataModel> list, RecyclerViewInterface recyclerViewInterface){
         this.modelList = list;
         this.recyclerViewInterface = recyclerViewInterface;
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    public class activityViewHolder extends RecyclerView.ViewHolder{
         private TextView date;
         //private TextView stepCount;
         private TextView activityTitle;
         private TextView caloriesBurnt;
 
-        public MyViewHolder(final View view, RecyclerViewInterface recyclerViewInterface){
+        public activityViewHolder(final View view, RecyclerViewInterface recyclerViewInterface){
             //Akin to an onCreate method but not quite.
             super(view);
             date = view.findViewById(R.id.tv_date);
@@ -53,13 +54,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
 
     @NonNull
     @Override
-    public RecyclerAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ActivityRecyclerAdapter.activityViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View activityView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_activity_items, parent, false);
-        return new MyViewHolder(activityView, recyclerViewInterface);
+        return new activityViewHolder(activityView, recyclerViewInterface);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ActivityRecyclerAdapter.activityViewHolder holder, int position) {
         //Assigning values to the views.
         String date = modelList.get(position).getDate();
         //String stepCount = modelList.get(position).getStepCount();

@@ -12,9 +12,9 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.example.buildupplaybubba.DB.SQLiteOpenHelper;
-import com.example.buildupplaybubba.RecyclerView.RecyclerAdapter;
-import com.example.buildupplaybubba.RecyclerView.ActivityDataModel;
+import com.example.buildupplaybubba.DB.ActivityDatabaseHelper;
+import com.example.buildupplaybubba.RecyclerView.ActivityRecyclerAdapter;
+import com.example.buildupplaybubba.DataModels.ActivityDataModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -72,7 +72,7 @@ public class JournalActivity extends AppCompatActivity implements RecyclerViewIn
 
     private void setActivityModel() {
         Log.d("SetActivityModel", "accessing method");
-        SQLiteOpenHelper dbHelper = new SQLiteOpenHelper(getApplicationContext());
+        ActivityDatabaseHelper dbHelper = new ActivityDatabaseHelper(getApplicationContext());
         ArrayList<String> valuesFromDB = new ArrayList<>();
         ArrayList<HashMap<String, String>> databaseData = new ArrayList<>();
         databaseData = dbHelper.getActivityData();
@@ -89,11 +89,11 @@ public class JournalActivity extends AppCompatActivity implements RecyclerViewIn
     }
 
     private void setAdapter(){
-        RecyclerAdapter recyclerAdapter = new RecyclerAdapter(activityList, this);
+        ActivityRecyclerAdapter activityRecyclerAdapter = new ActivityRecyclerAdapter(activityList, this);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(recyclerAdapter);
+        recyclerView.setAdapter(activityRecyclerAdapter);
     }
 
     @Override

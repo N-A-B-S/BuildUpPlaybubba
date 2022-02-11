@@ -17,8 +17,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.buildupplaybubba.DB.SQLiteOpenHelper;
-import com.google.android.material.textfield.TextInputLayout;
+import com.example.buildupplaybubba.DB.ActivityDatabaseHelper;
 
 import java.util.Calendar;
 
@@ -31,14 +30,14 @@ public class EditJournalActivity extends AppCompatActivity implements AdapterVie
 
     DatePickerDialog picker;
 
-    SQLiteOpenHelper dbhelper;
+    ActivityDatabaseHelper dbhelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_journal);
 
-        dbhelper = new SQLiteOpenHelper(this);
+        dbhelper = new ActivityDatabaseHelper(this);
 
         editButton = (Button) findViewById(R.id.editBtn);
         cancelButton = (Button) findViewById(R.id.cancelBtn);

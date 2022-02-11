@@ -1,24 +1,13 @@
 package com.example.buildupplaybubba;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
 
 import com.example.buildupplaybubba.DateHelper.DateHelper;
-import com.example.buildupplaybubba.RecyclerView.RecyclerAdapter;
-import com.github.mikephil.charting.charts.BarChart;
-import com.github.mikephil.charting.data.BarData;
-import com.github.mikephil.charting.data.BarDataSet;
-import com.github.mikephil.charting.data.BarEntry;
-import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 

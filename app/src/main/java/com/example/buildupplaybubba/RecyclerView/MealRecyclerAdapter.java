@@ -8,12 +8,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.buildupplaybubba.DataModels.MealDataModel;
 import com.example.buildupplaybubba.R;
 import com.example.buildupplaybubba.RecyclerViewInterface;
 
 import java.util.ArrayList;
 
-public class MealRecyclerAdapter extends RecyclerView.Adapter<MealRecyclerAdapter.MyViewHolder> {
+public class MealRecyclerAdapter extends RecyclerView.Adapter<MealRecyclerAdapter.mealViewHolder> {
     private final RecyclerViewInterface recyclerViewInterface;
     private ArrayList<MealDataModel> modelList;
 
@@ -22,12 +23,12 @@ public class MealRecyclerAdapter extends RecyclerView.Adapter<MealRecyclerAdapte
         this.recyclerViewInterface = recyclerViewInterface;
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    public class mealViewHolder extends RecyclerView.ViewHolder{
         private TextView date;
         private TextView mealTitle;
         private TextView mealCalories;
 
-        public MyViewHolder(final View view, RecyclerViewInterface recyclerViewInterface){
+        public mealViewHolder(final View view, RecyclerViewInterface recyclerViewInterface){
             //Akin to an onCreate method but not quite.
             super(view);
             date = view.findViewById(R.id.tv_date);
@@ -51,13 +52,13 @@ public class MealRecyclerAdapter extends RecyclerView.Adapter<MealRecyclerAdapte
 
     @NonNull
     @Override
-    public MealRecyclerAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MealRecyclerAdapter.mealViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View activityView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_meal_items, parent, false);
-        return new MyViewHolder(activityView, recyclerViewInterface);
+        return new mealViewHolder(activityView, recyclerViewInterface);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MealRecyclerAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull mealViewHolder holder, int position) {
         //Assigning values to the views.
         String date = modelList.get(position).getDate();
         String mealsTitle = modelList.get(position).getMealTitle();
