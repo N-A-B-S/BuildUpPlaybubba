@@ -62,6 +62,8 @@ public class BrowseActivity extends AppCompatActivity{
         nutrition.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MealActivity.class);
+                startActivity(intent);
                 Toast.makeText(BrowseActivity.this, "Card onClick", Toast.LENGTH_SHORT).show();
             }
         });
