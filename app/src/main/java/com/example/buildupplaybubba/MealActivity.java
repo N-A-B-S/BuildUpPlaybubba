@@ -75,19 +75,38 @@ public class MealActivity extends AppCompatActivity implements RecyclerViewInter
 
     @Override
     public void onItemClick(int position) {
-//        Toast.makeText(JournalActivity.this, "Card onClick", Toast.LENGTH_SHORT).show();
-//        String id = activityList.get(position).getDbID();
-//        String activityTitle = activityList.get(position).getActivityTitle();
-//        String activity = activityList.get(position).getActivity();
-//        String date = activityList.get(position).getDate();
-//        String calories = activityList.get(position).getCaloriesBurnt();
-//        Log.d("ID", id);
-//        Intent intent = new Intent(this, JournalEntryActivity.class);
-//        intent.putExtra("id", id);
-//        intent.putExtra("activityTitle", activityTitle);
-//        intent.putExtra("activity", activity);
-//        intent.putExtra("date", date);
-//        intent.putExtra("calories", calories);
-//        startActivity(intent);
+        Toast.makeText(MealActivity.this, "Card onClick", Toast.LENGTH_SHORT).show();
+        String id = mealList.get(position).getDbID();
+        String title = mealList.get(position).getMealTitle();
+        String date = mealList.get(position).getDate();
+        String calories = mealList.get(position).getCalories();
+        String carbs = mealList.get(position).getCarbs();
+        String protein = mealList.get(position).getProtein();
+        String fat = mealList.get(position).getFat();
+        String fibre = mealList.get(position).getFibre();
+        String sugar = mealList.get(position).getSugar();
+        String sodium = mealList.get(position).getSodium();
+        String potassium = mealList.get(position).getPotassium();
+        String vitaminA = mealList.get(position).getVitaminA();
+        String vitaminC = mealList.get(position).getVitaminC();
+        String calcium = mealList.get(position).getCalcium();
+        String iron = mealList.get(position).getIron();
+        Intent intent = new Intent(this, MealEntryActivity.class);
+        intent.putExtra("id", id);
+        intent.putExtra("title", title);
+        intent.putExtra("date", date);
+        intent.putExtra("calories", calories);
+        intent.putExtra("carbs", carbs);
+        intent.putExtra("protein", protein);
+        intent.putExtra("fat", fat);
+        intent.putExtra("fibre", fibre);
+        intent.putExtra("sugar", sugar);
+        intent.putExtra("sodium", sodium);
+        intent.putExtra("potassium", potassium);
+        intent.putExtra("vitaminA", vitaminA);
+        intent.putExtra("vitaminC", vitaminC);
+        intent.putExtra("calcium", calcium);
+        intent.putExtra("iron", iron);
+        startActivity(intent);
     }
 }

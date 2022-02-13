@@ -12,9 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BuildUpPlaybubba">
         <activity
+            android:name=".EditMealActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MealEntryActivity"
+            android:exported="false"
+            android:noHistory="true"
+            android:parentActivityName=".BrowseActivity"/>
+        <activity
             android:name=".MealActivity"
             android:exported="false"
-            android:parentActivityName=".BrowseActivity"/>
+            android:parentActivityName=".BrowseActivity" />
         <activity
             android:name=".AddMealActivity"
             android:exported="false"

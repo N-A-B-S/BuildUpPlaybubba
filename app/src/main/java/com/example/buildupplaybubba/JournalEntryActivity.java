@@ -17,7 +17,6 @@ import com.example.buildupplaybubba.DB.ActivityDatabaseHelper;
 public class JournalEntryActivity extends AppCompatActivity {
 
     private AlertDialog.Builder dialogBuilder;
-    private AlertDialog dialog;
     ActivityDatabaseHelper dbHelper;
 
     ImageButton editButton, deleteButton;
