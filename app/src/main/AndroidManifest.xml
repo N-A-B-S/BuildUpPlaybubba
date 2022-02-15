@@ -12,13 +12,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BuildUpPlaybubba">
         <activity
+            android:name=".EditSleepActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SleepEntryActivity"
+            android:exported="false"
+            android:noHistory="true"
+            android:parentActivityName=".BrowseActivity" />
+        <activity
+            android:name=".SleepActivity"
+            android:exported="false"
+            android:parentActivityName=".BrowseActivity" />
+        <activity
             android:name=".EditMealActivity"
             android:exported="false" />
         <activity
             android:name=".MealEntryActivity"
             android:exported="false"
             android:noHistory="true"
-            android:parentActivityName=".BrowseActivity"/>
+            android:parentActivityName=".BrowseActivity" />
         <activity
             android:name=".MealActivity"
             android:exported="false"

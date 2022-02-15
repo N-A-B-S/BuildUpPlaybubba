@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditSleepActivity">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit sleep"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.189"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.035" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center"
+            android:layout_marginStart="15dp"
+            android:text="Went to bed" />
+
+        <EditText
+            android:id="@+id/bedtimeDate"
+            android:layout_width="110dp"
+            android:layout_height="40dp"
+            android:layout_gravity="right|center"
+            android:layout_marginStart="60dp"
+            android:ems="10"
+            android:inputType="date" />
+
+        <EditText
+            android:id="@+id/bedtimeTime"
+            android:layout_width="110dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_gravity="right|center"
+            android:ems="10"
+            android:inputType="time" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout1">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center"
+            android:layout_marginStart="15dp"
+            android:text="Woke up" />
+
+        <EditText
+            android:id="@+id/wakeupDate"
+            android:layout_width="110dp"
+            android:layout_height="40dp"
+            android:layout_gravity="right|center"
+            android:layout_marginStart="80dp"
+            android:ems="10"
+            android:inputType="time" />
+
+        <EditText
+            android:id="@+id/wakeupTime"
+            android:layout_width="110dp"
+            android:layout_height="40dp"
+            android:layout_gravity="right|center"
+            android:layout_marginStart="10dp"
+            android:ems="10"
+            android:inputType="date" />
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/cancelBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/editSleep"
+        app:layout_constraintHorizontal_bias="0.823"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.189" />
+
+    <Button
+        android:id="@+id/editSleep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.885"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.189" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

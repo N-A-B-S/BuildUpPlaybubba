@@ -71,6 +71,8 @@ public class BrowseActivity extends AppCompatActivity{
         sleep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), SleepActivity.class);
+                startActivity(intent);
                 Toast.makeText(BrowseActivity.this, "Card onClick", Toast.LENGTH_SHORT).show();
             }
         });
