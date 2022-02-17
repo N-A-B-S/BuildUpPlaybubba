@@ -200,7 +200,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         if (event.sensor == mStepCounter) {
             sensorValue = (int) event.values[0];
             if (!doesSensorRecordingExist()) {
-                Log.d("StepSensor", "Previous value doesn't exists.");
+                Log.d("StepSensor", "Previous value doesn't exist.");
                 saveInitialSensorValue(sensorValue);
             }
             if (loadInitialSensorSteps() > sensorValue){

@@ -14,8 +14,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ActivityDatabaseHelper extends android.database.sqlite.SQLiteOpenHelper {
-        public static final String DB_NAME = "FitnessApp";
-        public static final int DB_VERSION = 3;
+        public static final String DB_NAME = "Activity";
+        public static final int DB_VERSION = 1;
         public static final String TABLE_NAME = "UserWorkouts";
 
         public static final String ID = "id";

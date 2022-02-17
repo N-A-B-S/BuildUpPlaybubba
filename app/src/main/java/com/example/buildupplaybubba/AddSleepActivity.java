@@ -17,7 +17,11 @@ import android.widget.Toast;
 
 import com.example.buildupplaybubba.DB.SleepDatabaseHelper;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 public class AddSleepActivity extends AppCompatActivity {
 
@@ -123,19 +127,38 @@ public class AddSleepActivity extends AppCompatActivity {
     }
 
     public void saveSleep(View view){
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm", Locale.UK);
+
+        String startDateTime = bedDate.getText().toString() + " " + bedTime.getText().toString();
+        String endDateTime =  wakeDate.getText().toString() + " " + wakeTime.getText().toString();
+        Date d1 = new Date();
+        Date d2 = new Date();
+
+        try {
+            d1 = dateFormat.parse(startDateTime);
+            d2 = dateFormat.parse(endDateTime);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
         SleepDatabaseHelper sbh = new SleepDatabaseHelper(getApplicationContext());
-        if (bedDate.getText().toString().isEmpty() || bedTime.getText().toString().isEmpty()
-                || wakeDate.getText().toString().isEmpty() || wakeTime.getText().toString().isEmpty()){
-            Toast.makeText(this, "Please fill out all fields", Toast.LENGTH_SHORT).show();
-        } else {
-            boolean result = sbh.addSleep(bedDate.getText().toString(), wakeDate.getText().toString(),
-                    bedTime.getText().toString(), wakeTime.getText().toString());
-            if (result){
-                Toast.makeText(this, "Sleep saved", Toast.LENGTH_SHORT).show();
-                finish();
+
+        if (d2.compareTo(d1) > 0){
+            if ((bedDate.getText().toString().isEmpty() || bedTime.getText().toString().isEmpty()
+                    || wakeDate.getText().toString().isEmpty() || wakeTime.getText().toString().isEmpty())){
+                Toast.makeText(this, "Please fill out all fields", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(this, "Failed to save activity", Toast.LENGTH_SHORT).show();
+                boolean result = sbh.addSleep(bedDate.getText().toString(), wakeDate.getText().toString(),
+                        bedTime.getText().toString(), wakeTime.getText().toString());
+                if (result){
+                    Toast.makeText(this, "Sleep saved", Toast.LENGTH_SHORT).show();
+                    finish();
+                } else {
+                    Toast.makeText(this, "Failed to save activity", Toast.LENGTH_SHORT).show();
+                }
             }
+        } else {
+            Toast.makeText(this, "Ensure wake date and time are after sleep date and time", Toast.LENGTH_SHORT).show();
         }
     }
 }

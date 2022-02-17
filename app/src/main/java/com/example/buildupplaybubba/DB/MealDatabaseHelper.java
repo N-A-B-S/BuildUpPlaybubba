@@ -14,8 +14,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MealDatabaseHelper extends android.database.sqlite.SQLiteOpenHelper {
-    public static final String DB_NAME = "FitnessApp";
-    public static final int DB_VERSION = 3;
+    public static final String DB_NAME = "Meal";
+    public static final int DB_VERSION = 1;
     public static final String TABLE_NAME = "UserMeals";
 
     public static final String ID = "id";
@@ -58,7 +58,7 @@ public class MealDatabaseHelper extends android.database.sqlite.SQLiteOpenHelper
     }
 
     public boolean addMeal(String title, String calories, String protein, String carbs, String fibre, String fat, String sugar,
-    String sodium, String potassium, String vitaminA, String vitaminC, String calcium, String iron){
+                           String sodium, String potassium, String vitaminA, String vitaminC, String calcium, String iron){
         dateHelper = new DateHelper();
         Log.d("AddMeal in SQLite", "Method called");
         try {

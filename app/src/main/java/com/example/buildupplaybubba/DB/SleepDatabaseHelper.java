@@ -14,8 +14,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class SleepDatabaseHelper extends android.database.sqlite.SQLiteOpenHelper {
-    public static final String DB_NAME = "FitnessApp";
-    public static final int DB_VERSION = 3;
+    public static final String DB_NAME = "Sleep";
+    public static final int DB_VERSION = 1;
     public static final String TABLE_NAME = "UserSleep";
 
     public static final String ID = "id";
@@ -53,7 +53,7 @@ public class SleepDatabaseHelper extends android.database.sqlite.SQLiteOpenHelpe
             db.close();
             return true;
         } catch (Exception e) {
-            Log.d("AddActivity Error", e.toString());
+            Log.d("AddSleep Error", e.toString());
             return false;
         }
     }
